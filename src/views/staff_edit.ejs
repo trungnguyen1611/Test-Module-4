@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../public/bootstrap.min.css">
+    <script src="../public/bootstrap.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+<h2>Update Staff</h2>
+<form class="form-control" action="/staff/edit?id=<%=staff._id%>" method="post">
+    <input type="text" name="name" placeholder="Name" value="<%=staff.name%>"><br>
+    <input type="number" name="code" placeholder="Code" value="<%=staff.code%>"><br>
+    <input type="number" name="age" placeholder="Age" value="<%=staff.age%>"><br>
+    <input type="text" name="branch" placeholder="Branch" value="<%=staff.branch%>"><br>
+    <button type="submit" class="btn-primary">Submit</button>
+</form>
+<a href="/"><button class="btn-secondary">Back to Home</button></a>
+</body>
+</html>

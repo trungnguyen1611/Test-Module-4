@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../public/bootstrap.min.css">
+    <script src="../public/bootstrap.min.js"></script>
+    <title>HOME</title>
+</head>
+<body>
+<a href="/staff/create">
+    <button class="btn-success">ADD STAFF</button>
+</a>
+<a href="/branch">
+    <button class="btn-primary">ADD BRANCH</button>
+</a>
+<hr>
+<h1>Staff Manager</h1>
+<table class="table table-striped">
+    <tr>
+        <th>#</th>
+        <th>NAME</th>
+        <th>CODE</th>
+        <th>AGE</th>
+        <th>BRANCH</th>
+        <th><a href="/sort">
+                <button class="btn-secondary">SORT AGE</button>
+            </a></th>
+    </tr>
+    <% staffs.forEach((value, index)=>{ %>
+        <tr>
+            <td><%= index + 1 %></td>
+            <td><%= value.name %></td>
+            <td><%= value.code %></td>
+            <td><%= value.age %></td>
+            <td><%= value.branch %></td>
+            <td>
+                <a href="/staff/edit?id=<%= value._id %>">
+                    <button class="btn-warning">Update</button>
+                </a>
+
+                <a href="/staff/delete?id=<%= value._id %>" onclick="return confirm('Are you sure you want to delete this employee?')">
+                    <button class="btn-danger">Delete</button>
+                </a>
+            </td>
+            <td>
+                <a href="/detail?id=<%= value._id %>">
+                    <button class="btn-info">Detail</button>
+                </a>
+            </td>
+        </tr>
+    <% }) %>
+</table>
+</body>
+</html>
